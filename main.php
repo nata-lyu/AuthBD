@@ -1,23 +1,24 @@
 <?php
 // здесь происходит подключение к БД и вывод на экран всего содержимого
-require_once 'connectBD.php';
+require_once 'connectPDO.php';
  
 // Посылаем серверу запрос выборки всех элементов
-if ($result = mysqli_query($link, "SELECT * FROM MyAuth", MYSQLI_USE_RESULT))
-  {
-     echo "А вот и все наши пользователи: <br>"; 
-   }
-else die(mysqli_error($link));
+$stmt = $db->query('SELECT * from MyAuth');
+$rows = $stmt->fetchAll();
 
-// выводим на экран данные БД, полученные при запросе 
-echo '<table id="tableBD" border="1px" cellpadding="5px" align="center" width="40%">';
-while($row = mysqli_fetch_assoc($result)) { 
+function printBD ($records) {
+  echo '<table id="tableBD" border="1px" cellpadding="5px" align="center" width="40%">';
+  foreach($records as $row)
+  {
     echo '<tr>';
     echo '<td>'.$row['id'];
     echo '<td>'.$row['username'];
     echo '<td>'.$row['password'];
     echo '</tr>';
-} 
-echo '</table>';
+  }
+  echo '</table>';
+}
 
+// выводим на экран данные БД в виде таблицы
+printBD($rows);
 ?>

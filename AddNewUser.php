@@ -1,6 +1,5 @@
 <?php
 // добавляем данные нового польз-ля в БД
-require_once 'connectBD.php';
 $user = $_POST['username'];
 $pass = $_POST['password'];
 echo $user.".".$pass;
