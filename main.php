@@ -22,8 +22,7 @@ function printBD($records) {
 // выводим на экран данные БД в виде таблицы
 printBD($rows);
 
-//public function disconnect() {
-//  $this->$db = null;
-//}
-//$db->disconnect();
+// закрываем соединение с БД
+//$stmt = null;
+//$db = null;
 ?>

@@ -38,17 +38,17 @@
             $.ajax({  
                   type: "POST",  
                   url: "AddNewUser.php",  
-                  data: { username: user,//$("#username").val(),
-                          password: pass//$("#password").val()
+                  data: { username: user,
+                          password: pass
                   },          
                   success: function(data){  
                          $('#myDiv').empty();
-                         $('#myDiv').text(data);  
+                         //$('#myDiv').text('С сервера пришло:' + $.type(data));  
+                         $( "#myDiv" ).html('<p>С сервера пришло:</p>' + data);// "<span class='red'>Hello <b>Again</b></span>" );
                     },
                   error: function(req, text, error) {
                     alert('Ошибка AJAX: ' + text + ' | ' + error);
                     },
-                  //dataType: 'json'  
                 });  
               return false;  
           });  
