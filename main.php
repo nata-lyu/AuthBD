@@ -6,7 +6,7 @@ require_once 'connectPDO.php';
 $stmt = $db->query('SELECT * from MyAuth');
 $rows = $stmt->fetchAll();
 
-function printBD ($records) {
+function printBD($records) {
   echo '<table id="tableBD" border="1px" cellpadding="5px" align="center" width="40%">';
   foreach($records as $row)
   {
@@ -21,4 +21,9 @@ function printBD ($records) {
 
 // выводим на экран данные БД в виде таблицы
 printBD($rows);
+
+//public function disconnect() {
+//  $this->$db = null;
+//}
+//$db->disconnect();
 ?>
