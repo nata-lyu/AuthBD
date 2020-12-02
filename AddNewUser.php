@@ -13,6 +13,6 @@ $db->query("INSERT INTO MyAuth (username, password) VALUES ('$user', '$pass')");
 require_once 'connectPDO.php';
 $stmt = $db->query('SELECT * from MyAuth');
 $rows = $stmt->fetchAll();  
-header('Location: index.php');
+//header('Location: index.php');
 printBD($rows);
 ?>

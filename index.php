@@ -43,8 +43,7 @@
                   },          
                   success: function(data){  
                          $('#myDiv').empty();
-                         //$('#myDiv').text('С сервера пришло:' + $.type(data));  
-                         $( "#myDiv" ).html('<p>С сервера пришло:</p>' + data);// "<span class='red'>Hello <b>Again</b></span>" );
+                         $( "#myDiv" ).html('<p>С сервера пришло:</p>' + data);
                     },
                   error: function(req, text, error) {
                     alert('Ошибка AJAX: ' + text + ' | ' + error);
