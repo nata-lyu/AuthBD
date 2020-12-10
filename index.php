@@ -10,9 +10,6 @@
  <body>
     <h2>Перед вами данные таблицы MyAuth, загруженные с сервера</h2>
     <div id='myDiv' name='myDiv'>
-    <?php
-        include 'main.php';
-    ?>
     </div>
 
     <form>
@@ -32,6 +29,8 @@
 
     <script>
         $(document).ready(function() {
+           $('#myDiv').load('print.php');
+
            $('#addNewBtn').click(function () {  
             var user = $.trim($('#username').val());
             var pass = $.trim($('#password').val());
@@ -43,8 +42,8 @@
                   },          
                   success: function(data){  
                          $('#myDiv').empty();
-                         $( "#myDiv" ).html('<p>С сервера пришло:</p>' + data);
-                    },
+                         $( "#myDiv" ).html(data);
+                    }, 
                   error: function(req, text, error) {
                     alert('Ошибка AJAX: ' + text + ' | ' + error);
                     },

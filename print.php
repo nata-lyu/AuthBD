@@ -21,8 +21,4 @@ function printBD($records) {
 
 // выводим на экран данные БД в виде таблицы
 printBD($rows);
-
-// закрываем соединение с БД
-//$stmt = null;
-//$db = null;
 ?>
